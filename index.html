@@ -109,34 +109,86 @@
             <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Listo para optimizar los recursos de tu empresa?</h2>
             <p class="text-gray-600 mb-8">Déjanos tus datos y un especialista de Sisnet te armará una propuesta a medida el mismo día.</p>
             
-            <form class="bg-white p-8 rounded-lg shadow-md flex flex-col gap-4 text-left">
-                <div>
-                    <label class="block text-sm font-medium text-gray-700">Nombre de la Empresa</label>
-                    <input type="text" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500" placeholder="Ej. Corporación ABC S.A.C.">
-                </div>
+<!-- Contenedor del Formulario -->
+            <form id="form-contacto" name="cotizaciones" data-netlify="true" class="bg-white p-8 rounded-lg shadow-md flex flex-col gap-4 text-left" onsubmit="enviarFormulario(event)">
+                
+                <!-- Campo oculto necesario para que Netlify reconozca el formulario en JavaScript -->
+                <input type="hidden" name="form-name" value="cotizaciones" />
+
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombre de Contacto</label>
-                        <input type="text" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500" placeholder="Tu nombre">
+                        <label class="block text-sm font-medium text-gray-700">Razón Social *</label>
+                        <input type="text" id="empresa" name="empresa" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="Ej. Corporación ABC S.A.C." oninput="limpiarError(this)">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Correo Electrónico Corporativo</label>
-                        <input type="email" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500" placeholder="correo@tuempresa.com">
+                        <label class="block text-sm font-medium text-gray-700">RUC *</label>
+                        <input type="text" id="ruc" name="ruc" maxlength="11" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="11 dígitos" oninput="limpiarError(this)">
                     </div>
                 </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Nombre de Contacto *</label>
+                        <input type="text" id="contacto-nombre" name="contacto" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="Tu nombre" oninput="limpiarError(this)">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700">Teléfono Móvil *</label>
+                        <input type="tel" id="telefono" name="telefono" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="Ej. 999 888 777" oninput="limpiarError(this)">
+                    </div>
+                </div>
+
                 <div>
-                    <label class="block text-sm font-medium text-gray-700">¿Qué tipo de equipos necesitas?</label>
-                    <select class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500">
-                        <option>Laptops para trabajo de oficina</option>
-                        <option>Laptops de alto rendimiento (Diseño/Ingeniería)</option>
-                        <option>Computadoras de Escritorio (Desktop)</option>
-                        <option>Aún no estoy seguro, necesito asesoría</option>
+                    <label class="block text-sm font-medium text-gray-700">Correo Electrónico Corporativo *</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="wilderlopezm@gmail.com" oninput="limpiarError(this)">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">¿Qué tipo de equipos necesitas? *</label>
+                    <select id="equipos" name="tipo_equipos" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" onchange="limpiarError(this)">
+                        <option value="">Selecciona una opción...</option>
+                        <option value="oficina">Laptops para trabajo de oficina</option>
+                        <option value="rendimiento">Laptops de alto rendimiento (Diseño/Ingeniería)</option>
+                        <option value="desktop">Computadoras de Escritorio (Desktop)</option>
+                        <option value="asesoria">Aún no estoy seguro, necesito asesoría</option>
                     </select>
                 </div>
-                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition mt-4">
+                
+                <!-- Mensaje de Error de Validación -->
+                <div id="mensaje-error" class="hidden text-red-600 text-sm font-medium mt-2">
+                    ⚠️ Por favor, completa todos los campos obligatorios para continuar.
+                </div>
+
+                <button type="submit" id="btn-submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition mt-4">
                     Solicitar Cotización Gratuita
                 </button>
             </form>
+            <!-- Mensaje de Éxito y Próximos Pasos -->
+            <div id="mensaje-exito" class="hidden bg-white p-8 rounded-lg shadow-md border-t-4 border-green-500 text-left mt-8">
+                <div class="text-center mb-6">
+                    <div class="text-green-500 text-5xl mb-3">✔️</div>
+                    <h3 class="text-2xl font-bold text-gray-900">¡Solicitud enviada con éxito!</h3>
+                    <p class="text-gray-600 mt-2">Hemos recibido la información de tu empresa.</p>
+                </div>
+                
+                <div class="bg-gray-50 rounded-md p-6">
+                    <h4 class="font-bold text-gray-800 mb-4">¿Qué sigue ahora?</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center font-bold text-sm mr-3 shrink-0">1</span>
+                            <p class="text-gray-700 text-sm"><strong>Análisis rápido:</strong> Un especialista de Sisnet está evaluando tus requerimientos en este momento.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center font-bold text-sm mr-3 shrink-0">2</span>
+                            <p class="text-gray-700 text-sm"><strong>Contacto inmediato:</strong> Te llamaremos o enviaremos una cotización detallada a tu correo corporativo el mismo día de hoy.</p>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="bg-blue-100 text-blue-700 w-6 h-6 rounded-full flex items-center justify-center font-bold text-sm mr-3 shrink-0">3</span>
+                            <p class="text-gray-700 text-sm"><strong>Coordinación:</strong> Resolveremos tus dudas y programaremos la entrega de tus equipos en Miraflores o donde nos indiques.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -146,5 +198,78 @@
         <p class="mt-2 text-sm">Operando desde Miraflores, Lima - Perú.</p>
     </footer>
 
+    <!-- Lógica de Validación y Envío Real a Netlify -->
+    <script>
+        function enviarFormulario(event) {
+            event.preventDefault(); // Evita que la página recargue
+
+            const form = event.target;
+            const empresa = document.getElementById('empresa');
+            const ruc = document.getElementById('ruc');
+            const contacto = document.getElementById('contacto-nombre');
+            const telefono = document.getElementById('telefono');
+            const email = document.getElementById('email');
+            const equipos = document.getElementById('equipos');
+            const mensajeError = document.getElementById('mensaje-error');
+
+            let tieneError = false;
+
+            // Ocultar mensaje de error inicial
+            mensajeError.classList.add('hidden');
+
+            // Validar campos vacíos
+            if (!empresa.value.trim()) { marcarError(empresa); tieneError = true; }
+            if (!ruc.value.trim() || ruc.value.length < 11) { marcarError(ruc); tieneError = true; }
+            if (!contacto.value.trim()) { marcarError(contacto); tieneError = true; }
+            if (!telefono.value.trim()) { marcarError(telefono); tieneError = true; }
+            if (!email.value.trim() || !email.value.includes('@')) { marcarError(email); tieneError = true; }
+            if (equipos.value === "") { marcarError(equipos); tieneError = true; }
+
+            if (tieneError) {
+                mensajeError.classList.remove('hidden');
+                return;
+            }
+
+            // Cambiar estado del botón
+            const boton = document.getElementById('btn-submit');
+            const textoOriginal = boton.innerText;
+            boton.innerText = 'Enviando solicitud...';
+            boton.disabled = true;
+            boton.classList.add('opacity-75');
+
+            // Recolectar datos del formulario para Netlify
+            const formData = new FormData(form);
+
+            // Enviar datos usando Fetch (AJAX)
+            fetch("/", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString(),
+            })
+            .then(() => {
+                // Éxito: Ocultar form y mostrar mensaje
+                document.getElementById('form-contacto').classList.add('hidden');
+                document.getElementById('mensaje-exito').classList.remove('hidden');
+            })
+            .catch((error) => {
+                // Error: Restaurar botón y avisar
+                alert("Hubo un problema al enviar la solicitud. Por favor, intenta nuevamente.");
+                boton.innerText = textoOriginal;
+                boton.disabled = false;
+                boton.classList.remove('opacity-75');
+            });
+        }
+
+        // Función para pintar el borde rojo si hay error
+        function marcarError(elemento) {
+            elemento.classList.add('border-red-500', 'ring-1', 'ring-red-500');
+        }
+
+        // Función para limpiar el borde rojo cuando el usuario empieza a escribir
+        function limpiarError(elemento) {
+            elemento.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
+            document.getElementById('mensaje-error').classList.add('hidden');
+        }
+    </script>
 </body>
 </html>
