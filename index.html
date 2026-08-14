@@ -10,31 +10,70 @@
 <body class="font-sans text-gray-800 bg-gray-50">
 
     <!-- Navegación -->
-    <nav class="bg-white shadow-md fixed w-full z-10 top-0">
+    <nav class="bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_8px_30px_rgba(15,23,42,0.04)] fixed w-full z-10 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
+            <div class="flex justify-between items-center gap-3 h-20">
                 <div class="flex-shrink-0 flex items-center gap-3">
-                    <img src="img/Logo.png" alt="Logo Sisnet" class="h-12 md:h-14 w-auto object-contain">
+                    <img src="img/Logo.png" alt="Logo Sisnet" class="h-12 md:h-14 w-auto object-contain drop-shadow-sm">
                 </div>
-                <div>
-                    <a href="#contacto" class="bg-blue-600 text-white px-4 py-2 rounded-md font-medium hover:bg-blue-700 transition">Cotizar ahora</a>
+
+                <div class="flex items-center gap-2 md:gap-4 flex-wrap justify-end">
+                    <a href="mailto:conversemos@sisnet.com.pe" class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white text-xs md:text-sm font-medium text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 shadow-sm">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11z"></path>
+                                <path d="M4 7l8 6 8-6"></path>
+                            </svg>
+                        </span>
+                        <span>conversemos@sisnet.com.pe</span>
+                    </a>
+
+                    <a href="https://wa.me/51974368064?text=Hola%20Sisnet%2C%20quiero%20más%20información%20sobre%20alquiler%20de%20equipos." target="_blank" rel="noopener" class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white text-xs md:text-sm font-medium text-slate-700 hover:border-green-200 hover:bg-green-50 hover:text-green-700 transition-all duration-200 shadow-sm">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-green-100 text-green-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12.04 2C6.58 2 2.17 6.4 2.17 11.85c0 2.09.65 4.1 1.77 5.82L2 22l4.5-1.91A9.79 9.79 0 0 0 12.04 21C17.5 21 21.91 16.6 21.91 11.15S17.5 2 12.04 2zm0 1.8c4.36 0 7.9 3.52 7.9 7.85 0 4.32-3.54 7.85-7.9 7.85-1.72 0-3.3-.47-4.66-1.31l-.38-.22-2.68 1.13 1.14-2.6-.24-.4A7.06 7.06 0 0 1 4.14 11.7c0-4.33 3.54-7.85 7.9-7.85zm-2.33 4.35c-.27 0-.6.1-.9.5-.3.4-1.05 1.04-1.05 2.58s1.08 2.96 1.24 3.17c.16.2 2.1 3.42 5.15 4.5.74.29 1.36.46 1.82.59.74.25 1.4.22 1.92.13.59-.09 1.78-.72 2.03-1.42.25-.7.25-1.3.18-1.42-.06-.12-.22-.2-.46-.35l-1.7-.82c-.24-.12-.42-.2-.6.12-.18.31-.7.9-.86 1.08-.15.18-.3.2-.56.07-.26-.13-1.1-.4-2.11-1.28-.78-.7-1.3-1.56-1.46-1.82-.15-.26-.02-.4.11-.52l.4-.49c.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.48-.06-.14-.5-1.2-.69-1.65-.18-.44-.36-.38-.5-.38z"></path>
+                            </svg>
+                        </span>
+                        <span>974368064</span>
+                    </a>
+
+                    <a href="#contacto" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-5 py-2.5 rounded-full font-semibold shadow-[0_10px_24px_rgba(37,99,235,0.28)] hover:shadow-[0_14px_30px_rgba(37,99,235,0.38)] transition-all duration-200 text-sm">Cotizar ahora</a>
                 </div>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section (El Gancho) -->
-    <header class="pt-24 pb-16 bg-blue-50">
+    <header class="pt-24 pb-16 bg-[radial-gradient(circle_at_top,_rgba(59,130,246,0.1),_transparent_40%),linear-gradient(135deg,#f8fbff_0%,#edf6ff_35%,#e0f2fe_100%)]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight mb-4">
+            <div class="inline-flex items-center gap-2 bg-white/80 border border-blue-100 text-blue-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Soporte técnico y entrega rápida en Miraflores
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-4 leading-[1.05]">
                 No compres tecnología que se devalúa. <span class="text-blue-600">Alquílala.</span>
             </h1>
-            <p class="mt-4 max-w-2xl text-xl text-gray-600 mx-auto">
+            <p class="mt-4 max-w-3xl text-lg md:text-xl text-slate-600 mx-auto leading-relaxed">
                 Equipa a tu empresa con laptops y computadoras de última generación sin descapitalizarte. Soporte técnico incluido y atención inmediata desde Miraflores.
             </p>
-            <div class="mt-8 flex justify-center gap-4">
-                <a href="#solucion" class="bg-white text-blue-600 border border-blue-600 px-6 py-3 rounded-md font-bold hover:bg-blue-50 transition">Ver cómo funciona</a>
-                <a href="#contacto" class="bg-blue-600 text-white px-6 py-3 rounded-md font-bold hover:bg-blue-700 transition">Hablar con un asesor</a>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <a href="#solucion" class="bg-white text-blue-600 border border-blue-200 px-6 py-3 rounded-full font-bold shadow-sm hover:bg-blue-50 transition-all duration-200">Ver cómo funciona</a>
+                <a href="#contacto" class="bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-bold shadow-[0_14px_28px_rgba(37,99,235,0.25)] hover:shadow-[0_18px_36px_rgba(37,99,235,0.35)] transition-all duration-200">Hablar con un asesor</a>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+                <div class="bg-white/80 border border-slate-200 rounded-2xl p-5 shadow-sm backdrop-blur-sm">
+                    <p class="text-3xl font-extrabold text-blue-600">+120</p>
+                    <p class="mt-2 text-sm text-slate-600">empresas equipadas con tecnología moderna</p>
+                </div>
+                <div class="bg-white/80 border border-slate-200 rounded-2xl p-5 shadow-sm backdrop-blur-sm">
+                    <p class="text-3xl font-extrabold text-blue-600">24h</p>
+                    <p class="mt-2 text-sm text-slate-600">respuesta y coordinación para tu operación</p>
+                </div>
+                <div class="bg-white/80 border border-slate-200 rounded-2xl p-5 shadow-sm backdrop-blur-sm">
+                    <p class="text-3xl font-extrabold text-blue-600">100%</p>
+                    <p class="mt-2 text-sm text-slate-600">mantenimiento y soporte incluidos</p>
+                </div>
             </div>
         </div>
     </header>
@@ -43,108 +82,121 @@
     <section class="py-16 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
-                <h2 class="text-3xl font-bold text-gray-900">¿Identificas estos problemas en tu empresa?</h2>
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700 mb-3">El costo oculto de la tecnología</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">¿Identificas estos problemas en tu empresa?</h2>
             </div>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Problema 1 -->
-                <div class="bg-red-50 p-6 rounded-lg border border-red-100">
-                    <div class="text-red-500 text-4xl mb-4">💸</div>
-                    <h3 class="text-xl font-bold mb-2">Fuga de Capital</h3>
-                    <p class="text-gray-600">Comprar equipos inmoviliza miles de dólares que podrías invertir en el crecimiento central de tu negocio.</p>
+                <div class="bg-gradient-to-br from-rose-50 to-white p-7 rounded-2xl border border-rose-100 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-rose-100 text-3xl mb-5">💸</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900">Fuga de capital</h3>
+                    <p class="text-slate-600 leading-relaxed">Comprar equipos inmoviliza miles de dólares que podrías invertir en el crecimiento central de tu negocio.</p>
                 </div>
                 <!-- Problema 2 -->
-                <div class="bg-red-50 p-6 rounded-lg border border-red-100">
-                    <div class="text-red-500 text-4xl mb-4">🐢</div>
-                    <h3 class="text-xl font-bold mb-2">Equipos Obsoletos y Lentos</h3>
-                    <p class="text-gray-600">La tecnología avanza rápido. En dos años, tus costosas computadoras ya estarán limitando la productividad de tu equipo.</p>
+                <div class="bg-gradient-to-br from-amber-50 to-white p-7 rounded-2xl border border-amber-100 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-amber-100 text-3xl mb-5">🐢</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900">Equipos obsoletos y lentos</h3>
+                    <p class="text-slate-600 leading-relaxed">La tecnología avanza rápido. En dos años, tus costosas computadoras ya estarán limitando la productividad de tu equipo.</p>
                 </div>
                 <!-- Problema 3 -->
-                <div class="bg-red-50 p-6 rounded-lg border border-red-100">
-                    <div class="text-red-500 text-4xl mb-4">🔧</div>
-                    <h3 class="text-xl font-bold mb-2">Dolores de cabeza de TI</h3>
-                    <p class="text-gray-600">Las computadoras fallan, requieren mantenimiento y tu personal pierde horas valiosas intentando arreglarlas.</p>
+                <div class="bg-gradient-to-br from-sky-50 to-white p-7 rounded-2xl border border-sky-100 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="flex items-center justify-center w-14 h-14 rounded-2xl bg-sky-100 text-3xl mb-5">🔧</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900">Dolores de cabeza de TI</h3>
+                    <p class="text-slate-600 leading-relaxed">Las computadoras fallan, requieren mantenimiento y tu personal pierde horas valiosas intentando arreglarlas.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Sección: La Solución (Sisnet) -->
-    <section id="solucion" class="py-16 bg-blue-600 text-white">
+    <section id="solucion" class="py-16 bg-gradient-to-br from-blue-700 via-blue-800 to-sky-900 text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold mb-6">Encontramos la solución: Renting Informático con Sisnet</h2>
-                    <p class="text-lg mb-6 text-blue-100">En lugar de gastar una fortuna comprando, alquila los equipos exactos que necesita tu personal. Nosotros nos encargamos de que siempre funcionen.</p>
-                    <ul class="space-y-4">
-                        <li class="flex items-center">
-                            <span class="text-green-300 mr-3">✔️</span>
-                            <span>Renovación tecnológica constante.</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-300 mr-3">✔️</span>
-                            <span>Gasto 100% deducible de impuestos.</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-300 mr-3">✔️</span>
-                            <span>Mantenimiento preventivo y correctivo incluido.</span>
-                        </li>
-                        <li class="flex items-center">
-                            <span class="text-green-300 mr-3">✔️</span>
-                            <span>Escalabilidad: Sube o baja la cantidad de equipos según tus contratos.</span>
-                        </li>
-                    </ul>
+                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-200 mb-3">La solución inteligente</p>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Renting informático con Sisnet</h2>
+                    <p class="text-lg mb-8 text-blue-100 leading-relaxed">En lugar de gastar una fortuna comprando, alquila los equipos exactos que necesita tu personal. Nosotros nos encargamos de que siempre funcionen.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                            <div class="text-xl mb-2">✅</div>
+                            <p class="font-semibold">Renovación tecnológica constante</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                            <div class="text-xl mb-2">💼</div>
+                            <p class="font-semibold">Gasto 100% deducible</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                            <div class="text-xl mb-2">🛠️</div>
+                            <p class="font-semibold">Mantenimiento incluido</p>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+                            <div class="text-xl mb-2">📈</div>
+                            <p class="font-semibold">Escalabilidad instantánea</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="bg-white text-gray-800 p-8 rounded-lg shadow-xl text-center">
-                    <h3 class="text-2xl font-bold text-blue-600 mb-2">Garantía Local</h3>
-                    <p class="text-gray-600 mb-4">Nuestras oficinas y centro de soporte técnico están estratégicamente ubicados en <strong>Miraflores</strong>.</p>
-                    <p class="font-medium">Si un equipo falla, lo reemplazamos de inmediato. Cero tiempos muertos para tu empresa.</p>
+                <div class="bg-white text-slate-800 p-8 rounded-3xl shadow-2xl shadow-blue-950/20 text-left">
+                    <div class="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-full text-xs font-semibold uppercase tracking-wide mb-4">
+                        <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        Garantía local
+                    </div>
+                    <h3 class="text-2xl font-bold text-blue-700 mb-3">Soporte inmediato, sin tiempos muertos</h3>
+                    <p class="text-slate-600 mb-5 leading-relaxed">Nuestras oficinas y centro de soporte técnico están estratégicamente ubicados en <strong>Miraflores</strong>.</p>
+                    <div class="bg-slate-50 rounded-2xl p-4 border border-slate-200">
+                        <p class="font-semibold text-slate-800">Si un equipo falla, lo reemplazamos de inmediato.</p>
+                        <p class="text-sm text-slate-600 mt-2">Cero tiempos muertos para tu empresa.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action / Formulario de Contacto -->
-    <section id="contacto" class="py-16 bg-gray-50">
+    <section id="contacto" class="py-16 bg-slate-50">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-900 mb-4">¿Listo para optimizar los recursos de tu empresa?</h2>
-            <p class="text-gray-600 mb-8">Déjanos tus datos y un especialista de Sisnet te armará una propuesta a medida el mismo día.</p>
+            <div class="mb-6 inline-flex items-center gap-2 bg-white border border-slate-200 text-slate-600 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Propuesta personalizada el mismo día
+            </div>
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">¿Listo para optimizar los recursos de tu empresa?</h2>
+            <p class="text-slate-600 mb-8 text-lg leading-relaxed">Déjanos tus datos y un especialista de Sisnet te armará una propuesta a medida y sin compromiso.</p>
             
 <!-- Contenedor del Formulario -->
-            <form id="form-contacto" name="cotizaciones" data-netlify="true" class="bg-white p-8 rounded-lg shadow-md flex flex-col gap-4 text-left" onsubmit="enviarFormulario(event)">
+            <form id="form-contacto" name="cotizaciones" data-netlify="true" class="bg-white p-8 rounded-[28px] shadow-[0_30px_80px_-25px_rgba(15,23,42,0.25)] border border-slate-200 flex flex-col gap-4 text-left" onsubmit="enviarFormulario(event)">
                 
                 <!-- Campo oculto necesario para que Netlify reconozca el formulario en JavaScript -->
                 <input type="hidden" name="form-name" value="cotizaciones" />
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Razón Social *</label>
-                        <input type="text" id="empresa" name="empresa" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="Ej. Corporación ABC S.A.C." oninput="limpiarError(this)">
+                        <label class="block text-sm font-medium text-slate-700">Razón Social *</label>
+                        <input type="text" id="empresa" name="empresa" class="mt-1 block w-full rounded-xl border border-slate-300 bg-slate-50 p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-200" placeholder="Ej. Corporación ABC S.A.C." oninput="limpiarError(this)">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">RUC *</label>
-                        <input type="text" id="ruc" name="ruc" maxlength="11" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="11 dígitos" oninput="limpiarError(this)">
+                        <label class="block text-sm font-medium text-slate-700">RUC *</label>
+                        <input type="text" id="ruc" name="ruc" maxlength="11" class="mt-1 block w-full rounded-xl border border-slate-300 bg-slate-50 p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-200" placeholder="11 dígitos" oninput="limpiarError(this)">
                     </div>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Nombre de Contacto *</label>
-                        <input type="text" id="contacto-nombre" name="contacto" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="Tu nombre" oninput="limpiarError(this)">
+                        <label class="block text-sm font-medium text-slate-700">Nombre de Contacto *</label>
+                        <input type="text" id="contacto-nombre" name="contacto" class="mt-1 block w-full rounded-xl border border-slate-300 bg-slate-50 p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-200" placeholder="Tu nombre" oninput="limpiarError(this)">
                     </div>
                     <div>
-                        <label class="block text-sm font-medium text-gray-700">Teléfono Móvil *</label>
-                        <input type="tel" id="telefono" name="telefono" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="Ej. 999 888 777" oninput="limpiarError(this)">
+                        <label class="block text-sm font-medium text-slate-700">Teléfono Móvil *</label>
+                        <input type="tel" id="telefono" name="telefono" class="mt-1 block w-full rounded-xl border border-slate-300 bg-slate-50 p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-200" placeholder="Ej. 999 888 777" oninput="limpiarError(this)">
                     </div>
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700">Correo Electrónico Corporativo *</label>
-                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" placeholder="wilderlopezm@gmail.com" oninput="limpiarError(this)">
+                    <label class="block text-sm font-medium text-slate-700">Correo Electrónico Corporativo *</label>
+                    <input type="email" id="email" name="email" class="mt-1 block w-full rounded-xl border border-slate-300 bg-slate-50 p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-200" placeholder="wilderlopezm@gmail.com" oninput="limpiarError(this)">
                 </div>
 
                 <div>
-                    <label class="block text-sm font-medium text-gray-700">¿Qué tipo de equipos necesitas? *</label>
-                    <select id="equipos" name="tipo_equipos" class="mt-1 block w-full rounded-md border-gray-300 border p-3 focus:border-blue-500 focus:ring-blue-500 outline-none transition-colors" onchange="limpiarError(this)">
+                    <label class="block text-sm font-medium text-slate-700">¿Qué tipo de equipos necesitas? *</label>
+                    <select id="equipos" name="tipo_equipos" class="mt-1 block w-full rounded-xl border border-slate-300 bg-slate-50 p-3.5 text-slate-800 focus:border-blue-500 focus:ring-4 focus:ring-blue-100 outline-none transition-all duration-200" onchange="limpiarError(this)">
                         <option value="">Selecciona una opción...</option>
                         <option value="oficina">Laptops para trabajo de oficina</option>
                         <option value="rendimiento">Laptops de alto rendimiento (Diseño/Ingeniería)</option>
@@ -158,14 +210,14 @@
                     ⚠️ Por favor, completa todos los campos obligatorios para continuar.
                 </div>
 
-                <button type="submit" id="btn-submit" class="w-full bg-blue-600 text-white font-bold py-3 px-4 rounded-md hover:bg-blue-700 transition mt-4">
+                <button type="submit" id="btn-submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-3.5 px-4 rounded-xl shadow-[0_18px_35px_rgba(37,99,235,0.28)] hover:shadow-[0_20px_40px_rgba(37,99,235,0.35)] transition-all duration-200 mt-4">
                     Solicitar Cotización Gratuita
                 </button>
             </form>
             <!-- Mensaje de Éxito y Próximos Pasos -->
-            <div id="mensaje-exito" class="hidden bg-white p-8 rounded-lg shadow-md border-t-4 border-green-500 text-left mt-8">
+            <div id="mensaje-exito" class="hidden bg-white p-8 rounded-[28px] shadow-[0_30px_80px_-25px_rgba(15,23,42,0.18)] border border-emerald-200 text-left mt-8">
                 <div class="text-center mb-6">
-                    <div class="text-green-500 text-5xl mb-3">✔️</div>
+                    <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-emerald-100 text-emerald-600 text-4xl mb-3">✔️</div>
                     <h3 class="text-2xl font-bold text-gray-900">¡Solicitud enviada con éxito!</h3>
                     <p class="text-gray-600 mt-2">Hemos recibido la información de tu empresa.</p>
                 </div>
@@ -192,10 +244,59 @@
         </div>
     </section>
 
+    <!-- Por qué elegir Sisnet -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-700 mb-3">Por qué elegir Sisnet</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Tecnología flexible para equipos que necesitan crecer sin fricción</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="group bg-slate-50 border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 text-xl mb-4">⚡</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Entrega ágil</h3>
+                    <p class="text-slate-600 leading-relaxed">Equipos listos para operar sin demoras ni procesos complejos.</p>
+                </div>
+
+                <div class="group bg-slate-50 border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 text-xl mb-4">🛡️</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Soporte real</h3>
+                    <p class="text-slate-600 leading-relaxed">Mantenimiento preventivo y correctivo con atención comercial cercana.</p>
+                </div>
+
+                <div class="group bg-slate-50 border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-violet-100 text-violet-700 text-xl mb-4">📊</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Control de costos</h3>
+                    <p class="text-slate-600 leading-relaxed">Optimiza tu presupuesto sin perder productividad ni capacidad operativa.</p>
+                </div>
+
+                <div class="group bg-slate-50 border border-slate-200 rounded-3xl p-6 shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-200">
+                    <div class="flex items-center justify-center w-12 h-12 rounded-2xl bg-amber-100 text-amber-700 text-xl mb-4">🔄</div>
+                    <h3 class="text-xl font-bold text-slate-900 mb-2">Escalabilidad</h3>
+                    <p class="text-slate-600 leading-relaxed">Aumenta o reduce equipos según el crecimiento y ritmo de tu negocio.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA final -->
+    <section class="py-16 bg-gradient-to-r from-slate-950 via-blue-950 to-slate-900 text-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-200 mb-3">Moderniza tu operación</p>
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">¿Tu empresa necesita tecnología más eficiente y sin costo inicial?</h2>
+            <p class="text-lg text-slate-200 mb-8 max-w-2xl mx-auto">Con Sisnet puedes alquilar equipos de alto rendimiento, mantenerlos operativos y adaptar tu infraestructura a tus necesidades reales.</p>
+            <a href="#contacto" class="inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-blue-700 text-white px-7 py-3.5 rounded-full font-bold shadow-[0_16px_36px_rgba(37,99,235,0.35)] hover:shadow-[0_22px_46px_rgba(37,99,235,0.45)] transition-all duration-200">Hablar con un asesor</a>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
-        <p>&copy; 2026 Sisnet. Todos los derechos reservados.</p>
-        <p class="mt-2 text-sm">Operando desde Miraflores, Lima - Perú.</p>
+    <footer class="bg-slate-950 text-slate-300 py-10 text-center">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="text-lg font-semibold text-white">Sisnet</p>
+            <p class="mt-2 text-sm text-slate-400">&copy; 2026 Sisnet. Todos los derechos reservados.</p>
+            <p class="mt-1 text-sm text-slate-400">Operando desde Miraflores, Lima - Perú.</p>
+        </div>
     </footer>
 
     <!-- Lógica de Validación y Envío Real a Netlify -->
