@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venta de Equipos y Repuestos de Cómputo | Sisnet Lima</title>
+    <meta name="description" content="Compra laptops, computadoras y repuestos de cómputo de calidad en Sisnet. Precios competitivos, garantía y entrega en Lima y provincia." />
+    <meta name="keywords" content="venta laptops, venta computadoras, repuestos cómputo, equipos informáticos, componentes, Lima, Miraflores, sisnet" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Sisnet" />
+    <meta property="og:title" content="Venta de Equipos y Repuestos | Sisnet" />
+    <meta property="og:description" content="Compra equipos de cómputo de calidad con garantía y asesoría técnica en Sisnet." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sisnet.com.pe/venta-de-equipos.html" />
+    <meta property="og:locale" content="es_PE" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .gallery-main {
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+            transition: transform 0.25s ease;
+        }
+
+        .gallery-main:hover {
+            transform: scale(1.02);
+        }
+
+        .gallery-thumb {
+            border: 2px solid transparent;
+            border-radius: 1rem;
+            overflow: hidden;
+            background: white;
+            transition: all 0.2s ease;
+        }
+
+        .gallery-thumb.active {
+            border-color: #10b981;
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.12);
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 72px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-zoom {
+            position: absolute;
+            right: 12px;
+            bottom: 12px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 9999px;
+            background: rgba(15, 23, 42, 0.7);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(6px);
+            font-size: 1.15rem;
+            line-height: 1;
+        }
+
+        .gallery-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            background: rgba(15, 23, 42, 0.8);
+            backdrop-filter: blur(8px);
+            padding: 1.25rem;
+        }
+
+        .gallery-modal.is-open {
+            display: flex;
+        }
+
+        .gallery-modal-content {
+            position: relative;
+            max-width: min(92vw, 900px);
+            width: 100%;
+            background: white;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 30px 80px rgba(15, 23, 42, 0.45);
+        }
+
+        .gallery-modal img {
+            width: 100%;
+            max-height: 75vh;
+            object-fit: contain;
+            display: block;
+            background: #f8fafc;
+        }
+
+        .gallery-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 40px;
+            height: 40px;
+            border-radius: 9999px;
+            border: none;
+            background: rgba(15, 23, 42, 0.7);
+            color: white;
+            font-size: 1.5rem;
+            line-height: 1;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-800 bg-gray-50">
+
+    <!-- Navegación -->
+    <nav class="bg-white/85 backdrop-blur-xl border-b border-slate-200/80 shadow-[0_8px_30px_rgba(15,23,42,0.04)] fixed w-full z-10 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center gap-3 h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <a href="index.html">
+                        <img src="img/Logo.png" alt="Logo Sisnet" class="h-12 md:h-14 w-auto object-contain drop-shadow-sm">
+                    </a>
+                </div>
+
+                <div class="flex items-center gap-2 md:gap-4 flex-wrap justify-end">
+                    <a href="mailto:conversemos@sisnet.com.pe" class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white text-xs md:text-sm font-medium text-slate-700 hover:border-blue-200 hover:bg-blue-50 hover:text-blue-700 transition-all duration-200 shadow-sm">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-blue-100 text-blue-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11z"></path>
+                                <path d="M4 7l8 6 8-6"></path>
+                            </svg>
+                        </span>
+                        <span>conversemos@sisnet.com.pe</span>
+                    </a>
+
+                    <a href="https://wa.me/51974368064?text=Hola%20Sisnet%2C%20quiero%20información%20sobre%20equipos%20y%20repuestos%20de%20cómputo." target="_blank" rel="noopener" class="hidden sm:flex items-center gap-2 px-3 py-2 rounded-full border border-slate-200 bg-white text-xs md:text-sm font-medium text-slate-700 hover:border-green-200 hover:bg-green-50 hover:text-green-700 transition-all duration-200 shadow-sm">
+                        <span class="flex items-center justify-center w-7 h-7 rounded-full bg-green-100 text-green-700">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12.04 2C6.58 2 2.17 6.4 2.17 11.85c0 2.09.65 4.1 1.77 5.82L2 22l4.5-1.91A9.79 9.79 0 0 0 12.04 21C17.5 21 21.91 16.6 21.91 11.15S17.5 2 12.04 2zm0 1.8c4.36 0 7.9 3.52 7.9 7.85 0 4.32-3.54 7.85-7.9 7.85-1.72 0-3.3-.47-4.66-1.31l-.38-.22-2.68 1.13 1.14-2.6-.24-.4A7.06 7.06 0 0 1 4.14 11.7c0-4.33 3.54-7.85 7.9-7.85z"></path>
+                            </svg>
+                        </span>
+                        <span>974 368 064</span>
+                    </a>
+
+                    <a href="index.html" class="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-5 py-2.5 rounded-full font-semibold shadow-[0_10px_24px_rgba(16,185,129,0.28)] hover:shadow-[0_14px_30px_rgba(16,185,129,0.38)] transition-all duration-200 text-sm">Ir al inicio</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="pt-24 pb-16 bg-gradient-to-br from-emerald-50 to-teal-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 bg-white/80 border border-emerald-100 text-emerald-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm mb-6">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Equipos de calidad, precios competitivos
+            </div>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight mb-4 leading-[1.05]">
+                Venta de Equipos y Repuestos <span class="text-emerald-600">de Cómputo</span>
+            </h1>
+            <p class="mt-4 max-w-3xl text-lg md:text-xl text-slate-600 mx-auto leading-relaxed">
+                Laptops, computadoras y repuestos de marcas premium. Garantía incluida, asesoría técnica y envío a todo Lima.
+            </p>
+            <div class="mt-8 flex justify-center gap-4 flex-wrap">
+                <a href="#catalogo" class="bg-white text-emerald-600 border border-emerald-200 px-6 py-3 rounded-full font-bold shadow-sm hover:bg-emerald-50 transition-all duration-200">Ver catálogo</a>
+                <a href="#contacto" class="bg-gradient-to-r from-emerald-600 to-emerald-700 text-white px-6 py-3 rounded-full font-bold shadow-[0_14px_28px_rgba(16,185,129,0.25)] hover:shadow-[0_18px_36px_rgba(16,185,129,0.35)] transition-all duration-200">Solicitar cotización</a>
+            </div>
+
+            <div class="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-4xl mx-auto text-left">
+                <div class="bg-white/80 border border-slate-200 rounded-2xl p-5 shadow-sm backdrop-blur-sm">
+                    <p class="text-3xl font-extrabold text-emerald-600">+500</p>
+                    <p class="mt-2 text-sm text-slate-600">equipos disponibles en stock</p>
+                </div>
+                <div class="bg-white/80 border border-slate-200 rounded-2xl p-5 shadow-sm backdrop-blur-sm">
+                    <p class="text-3xl font-extrabold text-emerald-600">100%</p>
+                    <p class="mt-2 text-sm text-slate-600">garantía en todos los equipos</p>
+                </div>
+                <div class="bg-white/80 border border-slate-200 rounded-2xl p-5 shadow-sm backdrop-blur-sm">
+                    <p class="text-3xl font-extrabold text-emerald-600">24-48h</p>
+                    <p class="mt-2 text-sm text-slate-600">envío en Lima y alrededores</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Repuestos destacados -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-3">Repuestos recomendados</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Baterías gaming para reemplazo rápido</h2>
+            </div>
+
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+                <article class="group bg-white rounded-[30px] border border-slate-200 shadow-sm p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-18px_rgba(15,23,42,0.22)]">
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <img src="img/repuestos/asus-1.png" alt="Batería ASUS vista 1" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                        <img src="img/repuestos/asus-2.png" alt="Batería ASUS vista 2" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                        <img src="img/repuestos/asus-3.png" alt="Batería ASUS vista 3" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                    </div>
+
+                    <div class="flex items-center justify-between gap-3 mb-3">
+                        <span class="inline-flex items-center rounded-full bg-emerald-100 text-emerald-700 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide">ASUS</span>
+                        <span class="text-xs font-semibold text-slate-500">90Wh</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">Batería ASUS Gaming High-Capacity (90Wh)</h3>
+                    <p class="text-sm text-slate-600 mb-3"><strong>Aplica para:</strong> ASUS TUF Gaming (FA506 / FX506 / FA706 / FX706) y ASUS ROG Strix (G15 / G17 / GX550).</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                        <li><span class="font-semibold text-slate-800">Parte:</span> C41N1906 / C41N1906S</li>
+                        <li><span class="font-semibold text-slate-800">Especificaciones:</span> 15.4V – 90Wh / 5845mAh</li>
+                    </ul>
+                    <div class="rounded-2xl bg-emerald-50 border border-emerald-100 px-3 py-2 text-sm font-bold text-emerald-700 mb-4">Costo: S/ 350.00</div>
+                    <p class="text-sm text-slate-600 italic leading-relaxed mb-5">“¡No dejes tu ASUS TUF o ROG conectada a la pared para siempre! Recupera las 5+ horas de rendimiento con la batería original de 90Wh. Disponible con conector flex corto o largo según tu placa madre exacto.”</p>
+                    <a href="#contacto" data-product="Batería ASUS Gaming 90Wh" class="inline-flex items-center justify-center w-full rounded-full bg-emerald-600 text-white py-3 font-semibold shadow-[0_12px_24px_rgba(16,185,129,0.25)] hover:bg-emerald-700 transition-all duration-200">Solicitar este repuesto</a>
+                </article>
+
+                <article class="group bg-white rounded-[30px] border border-slate-200 shadow-sm p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-18px_rgba(15,23,42,0.22)]">
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <img src="img/repuestos/lenovo-1.png" alt="Batería Lenovo vista 1" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                        <img src="img/repuestos/lenovo-2.png" alt="Batería Lenovo vista 2" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                        <img src="img/repuestos/lenovo-3.png" alt="Batería Lenovo vista 3" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                    </div>
+
+                    <div class="flex items-center justify-between gap-3 mb-3">
+                        <span class="inline-flex items-center rounded-full bg-blue-100 text-blue-700 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide">LENOVO</span>
+                        <span class="text-xs font-semibold text-slate-500">60Wh / 80Wh</span>
+                    </div>
+                    <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">Batería LENOVO Legion &amp; IdeaPad Gaming</h3>
+                    <p class="text-sm text-slate-600 mb-3"><strong>Aplica para:</strong> Lenovo Legion 5 (15IMH05, 15ARH05, 15ACH6) y Lenovo IdeaPad Gaming 3.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                        <li><span class="font-semibold text-slate-800">Parte:</span> L19M4PC0 / L19C4PC0</li>
+                        <li><span class="font-semibold text-slate-800">Especificaciones:</span> 15.36V – 60Wh / 80Wh</li>
+                    </ul>
+                    <div class="rounded-2xl bg-blue-50 border border-blue-100 px-3 py-2 text-sm font-bold text-blue-700 mb-4">Costo: S/ 340.00</div>
+                    <p class="text-sm text-slate-600 italic leading-relaxed mb-5">“¿Tu Lenovo Legion parpadea en naranja o no prende sin el cargador? Reemplaza tu batería con un repuesto nuevo sellado. Diseñado para soportar altas temperaturas y carga rápida Lenovo Rapid Charge.”</p>
+                    <a href="#contacto" data-product="Batería Lenovo Legion & IdeaPad Gaming" class="inline-flex items-center justify-center w-full rounded-full bg-blue-600 text-white py-3 font-semibold shadow-[0_12px_24px_rgba(37,99,235,0.25)] hover:bg-blue-700 transition-all duration-200">Solicitar este repuesto</a>
+                </article>
+
+                <article class="group bg-white rounded-[30px] border border-slate-200 shadow-sm p-4 sm:p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_-18px_rgba(15,23,42,0.22)]">
+                    <div class="grid grid-cols-3 gap-2 mb-4">
+                        <img src="img/repuestos/hp-1.png" alt="Batería HP vista 1" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                        <img src="img/repuestos/hp-2.png" alt="Batería HP vista 2" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                        <img src="img/repuestos/hp-3.png" alt="Batería HP vista 3" class="h-28 sm:h-32 w-full object-cover rounded-2xl border border-slate-200 transition-transform duration-300 group-hover:scale-[1.03]">
+                    </div>
+
+                    <div class="flex items-center justify-between gap-3 mb-3">
+                        <span class="inline-flex items-center rounded-full bg-orange-100 text-orange-700 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wide">HP</span>
+                        <span class="text-xs font-semibold text-slate-500">70.07Wh</span>
+                    </div>
+
+                    <h3 class="text-xl font-bold text-slate-900 leading-tight mb-3">Batería HP Victus &amp; Omen Gaming</h3>
+                    <p class="text-sm text-slate-600 mb-3"><strong>Aplica para:</strong> HP Victus 15/16 (15-fa, 16-d, 16-e) y HP Omen 15/16.</p>
+                    <ul class="space-y-2 text-sm text-slate-600 mb-4">
+                        <li><span class="font-semibold text-slate-800">Parte:</span> WK04XL / SD06XL</li>
+                        <li><span class="font-semibold text-slate-800">Especificaciones:</span> 15.4V – 70.07Wh</li>
+                    </ul>
+                    <div class="rounded-2xl bg-orange-50 border border-orange-100 px-3 py-2 text-sm font-bold text-orange-700 mb-4">Costo: S/ 330.00</div>
+                    <p class="text-sm text-slate-600 italic leading-relaxed mb-5">“Solución definitiva para HP Omen y Victus. Evita sobrecalentamientos por baterías desgastadas. Batería de polímero de litio de celda A++ con circuitos de protección contra sobrecarga.”</p>
+                    <a href="#contacto" data-product="Batería HP Victus & Omen Gaming" class="inline-flex items-center justify-center w-full rounded-full bg-orange-500 text-white py-3 font-semibold shadow-[0_12px_24px_rgba(249,115,22,0.25)] hover:bg-orange-600 transition-all duration-200">Solicitar este repuesto</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categorías de Productos -->
+    <section id="catalogo" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-3">Nuestro catálogo</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Productos disponibles</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Producto 1 -->
+                <div class="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border border-blue-100 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="text-4xl mb-4">💻</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900">Laptops Dell</h3>
+                    <p class="text-slate-600 text-sm mb-4">Inspiron, Latitude y Precision. Modelos nuevos con garantía.</p>
+                    <a href="#contacto" class="text-blue-600 font-semibold text-sm hover:text-blue-700">Ver modelos →</a>
+                </div>
+
+                <!-- Producto 2 -->
+                <div class="bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl border border-purple-100 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="text-4xl mb-4">🖥️</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900">Laptops Lenovo</h3>
+                    <p class="text-slate-600 text-sm mb-4">ThinkPad e IdeaPad. Tecnología de última generación.</p>
+                    <a href="#contacto" class="text-purple-600 font-semibold text-sm hover:text-purple-700">Ver modelos →</a>
+                </div>
+
+                <!-- Producto 3 -->
+                <div class="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl border border-green-100 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="text-4xl mb-4">⚙️</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900">Repuestos y Componentes</h3>
+                    <p class="text-slate-600 text-sm mb-4">Baterías, adaptadores, memorias RAM, SSD y más.</p>
+                    <a href="#contacto" class="text-green-600 font-semibold text-sm hover:text-green-700">Ver catálogo →</a>
+                </div>
+
+                <!-- Producto 4 -->
+                <div class="bg-gradient-to-br from-orange-50 to-white p-6 rounded-2xl border border-orange-100 shadow-sm hover:shadow-md transition-all duration-200">
+                    <div class="text-4xl mb-4">🖨️</div>
+                    <h3 class="text-xl font-bold mb-2 text-slate-900">Periféricos y Accesorios</h3>
+                    <p class="text-slate-600 text-sm mb-4">Mouses, teclados, monitores, cables y más.</p>
+                    <a href="#contacto" class="text-orange-600 font-semibold text-sm hover:text-orange-700">Ver productos →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ventajas -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-700 mb-3">¿Por qué comprar con nosotros?</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900">Garantía de calidad y servicio</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-2xl bg-emerald-100 text-emerald-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">100% Garantía</h3>
+                            <p class="text-slate-600">Todos nuestros equipos vienen con garantía. Cero riesgos en tu compra.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-2xl bg-emerald-100 text-emerald-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="1"></circle>
+                                    <path d="M12 1v6m0 6v6"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Precios Competitivos</h3>
+                            <p class="text-slate-600">Tenemos los mejores precios del mercado. Consultanos sin compromiso.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-2xl bg-emerald-100 text-emerald-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <rect x="1" y="4" width="15" height="7"></rect>
+                                    <path d="M16 4v7"></path>
+                                    <path d="M5 11v7"></path>
+                                    <path d="M12 11v7"></path>
+                                    <path d="M19 11v7"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Stock Completo</h3>
+                            <p class="text-slate-600">Más de 500 equipos disponibles. Envío inmediato en 24-48h.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-7 rounded-2xl border border-slate-200 shadow-sm">
+                    <div class="flex items-start gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-2xl bg-emerald-100 text-emerald-600">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+                                    <path d="M12 6v6l4.25 2.25"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-slate-900 mb-2">Asesoría Técnica</h3>
+                            <p class="text-slate-600">Nuestro equipo te ayuda a elegir el equipo perfecto para tu necesidad.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bloque de confianza -->
+    <section class="py-12 bg-gradient-to-r from-emerald-600 via-emerald-700 to-teal-700 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] items-center gap-8">
+                <div>
+                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-100 mb-3">Confianza y rapidez</p>
+                    <h3 class="text-3xl md:text-4xl font-bold mb-3">Stock actual, compatibilidad confirmada y respaldo técnico.</h3>
+                    <p class="text-emerald-50 text-lg leading-relaxed">Antes de comprar, confirmamos la compatibilidad exacta de tu modelo, te sugerimos la mejor opción y te entregamos la batería con soporte técnico.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 lg:justify-items-end">
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 text-center min-w-[130px]">
+                        <div class="text-2xl mb-2">⚡</div>
+                        <div class="font-bold text-sm">Stock real</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 text-center min-w-[130px]">
+                        <div class="text-2xl mb-2">🛡️</div>
+                        <div class="font-bold text-sm">Garantía</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm border border-white/15 rounded-2xl p-4 text-center min-w-[130px]">
+                        <div class="text-2xl mb-2">📞</div>
+                        <div class="font-bold text-sm">Asesoría</div>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#contacto" class="inline-flex items-center justify-center rounded-full bg-white text-emerald-700 px-7 py-3 font-bold shadow-lg hover:bg-emerald-50 transition-all duration-200">Solicitar cotización</a>
+                <a href="https://wa.me/51974368064?text=Hola%20Sisnet%2C%20quiero%20confirmar%20la%20compatibilidad%20de%20mi%20bater%C3%ADa%20gaming." target="_blank" rel="noopener" class="inline-flex items-center justify-center rounded-full border border-white/30 bg-transparent text-white px-7 py-3 font-bold hover:bg-white/10 transition-all duration-200">WhatsApp directo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulario de compra directa -->
+    <section id="contacto" class="py-16 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-8">
+                <div class="mb-6 inline-flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-600 px-4 py-2 rounded-full text-sm font-medium shadow-sm">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Compra directa y rápida
+                </div>
+                <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Compra lo que necesitas sin complicaciones</h2>
+                <p class="text-slate-600 text-lg leading-relaxed max-w-2xl mx-auto">Selecciona tu producto, indica el modelo y te confirmamos disponibilidad o te ayudamos a comprar directamente por WhatsApp.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-6 items-start">
+                <form id="form-contacto" name="consulta-equipos" data-netlify="true" class="bg-slate-50 p-6 md:p-8 rounded-[28px] shadow-[0_30px_80px_-25px_rgba(15,23,42,0.25)] border border-slate-200 flex flex-col gap-4 text-left" onsubmit="enviarFormulario(event)">
+                    <input type="hidden" name="form-name" value="consulta-equipos" />
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Nombre *</label>
+                            <input type="text" id="nombre" name="nombre" class="mt-1 block w-full rounded-xl border border-slate-300 bg-white p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none transition-all duration-200" placeholder="Tu nombre" oninput="limpiarError(this)" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Celular *</label>
+                            <input type="tel" id="telefono" name="telefono" class="mt-1 block w-full rounded-xl border border-slate-300 bg-white p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none transition-all duration-200" placeholder="Ej. 974 368 064" oninput="limpiarError(this)" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-2 rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-teal-50 px-4 py-3 shadow-sm">
+                        <div class="flex items-center gap-2 text-emerald-700 mb-1">
+                            <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-600 text-white text-xs font-bold">✓</span>
+                            <span class="text-xs font-semibold uppercase tracking-[0.12em]">Producto elegido</span>
+                        </div>
+                        <div id="producto-seleccionado" class="text-base font-bold text-slate-800">Ninguno</div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Producto *</label>
+                            <select id="equipo" name="equipo" class="mt-1 block w-full rounded-xl border border-slate-300 bg-white p-3.5 text-slate-800 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none transition-all duration-200" onchange="actualizarResumenProducto(this.value); limpiarError(this);" required>
+                                <option value="">Selecciona el producto</option>
+                                <option value="Batería ASUS Gaming 90Wh">Batería ASUS Gaming 90Wh</option>
+                                <option value="Batería Lenovo Legion & IdeaPad Gaming">Batería Lenovo Legion &amp; IdeaPad Gaming</option>
+                                <option value="Batería HP Victus & Omen Gaming">Batería HP Victus &amp; Omen Gaming</option>
+                                <option value="Laptop Dell">Laptop Dell</option>
+                                <option value="Laptop Lenovo">Laptop Lenovo</option>
+                                <option value="Laptop HP">Laptop HP</option>
+                                <option value="Repuesto / Otro">Repuesto / Otro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-slate-700">Cantidad *</label>
+                            <select id="cantidad" name="cantidad" class="mt-1 block w-full rounded-xl border border-slate-300 bg-white p-3.5 text-slate-800 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none transition-all duration-200" onchange="limpiarError(this)" required>
+                                <option value="">Selecciona</option>
+                                <option value="1 unidad">1 unidad</option>
+                                <option value="2 unidades">2 unidades</option>
+                                <option value="3 unidades">3 unidades</option>
+                                <option value="4 unidades">4 unidades</option>
+                                <option value="5+ unidades">5+ unidades</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700">Modelo exacto o referencia *</label>
+                        <input type="text" id="modelo" name="modelo" class="mt-1 block w-full rounded-xl border border-slate-300 bg-white p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none transition-all duration-200" placeholder="Ej. ASUS TUF FA506, Lenovo Legion 5, HP Victus 15" oninput="limpiarError(this)" required>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700">Correo electrónico</label>
+                        <input type="email" id="email" name="email" class="mt-1 block w-full rounded-xl border border-slate-300 bg-white p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none transition-all duration-200" placeholder="tu@email.com" oninput="limpiarError(this)">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700">Detalle de compra</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" class="mt-1 block w-full rounded-xl border border-slate-300 bg-white p-3.5 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-4 focus:ring-emerald-100 outline-none transition-all duration-200 resize-none" placeholder="Indica si deseas entrega, retiro, o confirmación de compatibilidad..."></textarea>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3 pt-2">
+                        <button type="submit" class="flex-1 bg-gradient-to-r from-emerald-600 to-emerald-700 text-white py-3.5 rounded-xl font-bold shadow-[0_10px_24px_rgba(16,185,129,0.28)] hover:shadow-[0_14px_30px_rgba(16,185,129,0.38)] transition-all duration-200">
+                            Comprar con cotización
+                        </button>
+                        <a id="whatsapp-compra" href="https://wa.me/51974368064?text=Hola%20Sisnet%2C%20quiero%20comprar%20directamente%20un%20equipo%20o%20repuesto%20y%20me%20gustaría%20confirmar%20la%20disponibilidad." target="_blank" rel="noopener" class="flex-1 inline-flex items-center justify-center rounded-xl bg-green-600 text-white py-3.5 font-bold shadow-[0_10px_24px_rgba(34,197,94,0.22)] hover:bg-green-700 transition-all duration-200">
+                            Comprar por WhatsApp
+                        </a>
+                    </div>
+                </form>
+
+                <aside class="bg-gradient-to-br from-emerald-600 via-emerald-700 to-teal-700 text-white rounded-[28px] p-6 md:p-8 shadow-[0_30px_80px_-25px_rgba(16,185,129,0.45)]">
+                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-100 mb-3">Compra rápida</p>
+                    <h3 class="text-2xl md:text-3xl font-bold mb-4">Te ayudamos a comprar sin perder tiempo.</h3>
+                    <ul class="space-y-4 text-emerald-50">
+                        <li class="flex gap-3 items-start">
+                            <span class="mt-1 text-lg">✅</span>
+                            <span>Confirmamos compatibilidad del modelo exacto.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="mt-1 text-lg">✅</span>
+                            <span>Te recomendaremos la mejor opción según tu uso.</span>
+                        </li>
+                        <li class="flex gap-3 items-start">
+                            <span class="mt-1 text-lg">✅</span>
+                            <span>Te respondemos rápido para coordinar entrega o retiro.</span>
+                        </li>
+                    </ul>
+                    <div class="mt-8 rounded-2xl bg-white/10 border border-white/15 p-4 backdrop-blur-sm">
+                        <p class="text-sm font-medium text-emerald-50 uppercase tracking-[0.12em] mb-2">Contacto directo</p>
+                        <p class="text-2xl font-bold">974 368 064</p>
+                        <a id="whatsapp-lateral" href="https://wa.me/51974368064?text=Hola%20Sisnet%2C%20quiero%20comprar%20un%20equipo%20o%20repuesto%20y%20me%20gustaría%20más%20información." target="_blank" rel="noopener" class="mt-4 inline-flex items-center justify-center w-full rounded-full bg-white text-emerald-700 py-3 font-bold hover:bg-emerald-50 transition-all duration-200">
+                            Chatear por WhatsApp
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Alquiler -->
+    <section class="py-16 bg-gradient-to-r from-blue-50 to-sky-50 border-t-2 border-blue-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">¿Prefieres alquilar?</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto mb-8">Si tu empresa prefiere alquilar laptops en lugar de comprar, tenemos la solución perfecta para ti.</p>
+            <a href="alquiler-de-laptops.html" class="inline-flex items-center justify-center bg-blue-600 text-white px-8 py-3.5 rounded-full font-bold hover:bg-blue-700 transition-all duration-200 shadow-md">
+                Ver servicio de alquiler →
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Sisnet</h4>
+                    <p class="text-slate-400 text-sm leading-relaxed">Tu socio en soluciones tecnológicas. Alquiler y venta de equipos de cómputo para empresas.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Servicios</h4>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li><a href="alquiler-de-laptops.html" class="hover:text-white transition-colors">Alquiler de Laptops</a></li>
+                        <li><a href="venta-de-equipos.html" class="hover:text-white transition-colors">Venta de Equipos</a></li>
+                        <li><a href="blog/index.html" class="hover:text-white transition-colors">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-lg mb-4">Contacto</h4>
+                    <ul class="text-slate-400 text-sm space-y-2">
+                        <li>📧 <a href="mailto:conversemos@sisnet.com.pe" class="hover:text-white transition-colors">conversemos@sisnet.com.pe</a></li>
+                        <li>📱 <a href="https://wa.me/51974368064" class="hover:text-white transition-colors">WhatsApp: 974 368 064</a></li>
+                        <li>📍 Miraflores, Lima, Perú</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-slate-400">
+                <p>&copy; 2025 Sisnet. Todos los derechos reservados. Equipos de cómputo y soluciones tecnológicas.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div id="gallery-modal" class="gallery-modal" aria-modal="true" role="dialog" aria-label="Vista ampliada del producto">
+        <div class="gallery-modal-content">
+            <button id="gallery-modal-close" class="gallery-modal-close" type="button" aria-label="Cerrar vista ampliada">×</button>
+            <img id="gallery-modal-image" src="" alt="Vista ampliada del producto">
+        </div>
+    </div>
+
+    <script>
+        function actualizarResumenProducto(producto) {
+            const resumen = document.getElementById('producto-seleccionado');
+            const whatsAppCompra = document.getElementById('whatsapp-compra');
+            const whatsAppLateral = document.getElementById('whatsapp-lateral');
+
+            if (resumen) {
+                resumen.textContent = producto || 'Ninguno';
+            }
+
+            const textoBase = 'Hola Sisnet, quiero comprar ' + (producto || 'un equipo o repuesto') + ' y me gustaría confirmar disponibilidad y precio.';
+            const mensaje = encodeURIComponent(textoBase);
+
+            if (whatsAppCompra) {
+                whatsAppCompra.href = 'https://wa.me/51974368064?text=' + mensaje;
+            }
+
+            if (whatsAppLateral) {
+                whatsAppLateral.href = 'https://wa.me/51974368064?text=' + mensaje;
+            }
+        }
+
+        function inicializarGalerias() {
+            document.querySelectorAll('article').forEach(function (article) {
+                const plainGrid = article.querySelector('.grid.grid-cols-3');
+                const images = Array.from(article.querySelectorAll('img[src*="repuestos/"]'));
+
+                if (!plainGrid || images.length < 2 || article.querySelector('.gallery-main')) {
+                    return;
+                }
+
+                const gallery = document.createElement('div');
+                gallery.className = 'gallery mb-4';
+                gallery.setAttribute('data-gallery', 'true');
+
+                const mainWrap = document.createElement('div');
+                mainWrap.className = 'relative overflow-hidden rounded-2xl border border-slate-200 bg-slate-100';
+
+                const mainImage = images[0].cloneNode(true);
+                mainImage.className = 'gallery-main w-full cursor-zoom-in';
+                mainImage.dataset.zoom = images[0].src;
+
+                const zoomButton = document.createElement('button');
+                zoomButton.type = 'button';
+                zoomButton.className = 'gallery-zoom';
+                zoomButton.setAttribute('aria-label', 'Zoom de imagen');
+                zoomButton.textContent = '+';
+
+                mainWrap.appendChild(mainImage);
+                mainWrap.appendChild(zoomButton);
+
+                const thumbsWrap = document.createElement('div');
+                thumbsWrap.className = 'mt-3 grid grid-cols-3 gap-2';
+
+                images.forEach(function (image, index) {
+                    const thumbButton = document.createElement('button');
+                    thumbButton.type = 'button';
+                    thumbButton.className = 'gallery-thumb' + (index === 0 ? ' active' : '');
+                    thumbButton.setAttribute('data-src', image.src);
+                    thumbButton.setAttribute('data-alt', image.alt || 'Vista del producto');
+                    thumbButton.setAttribute('aria-label', 'Ver imagen ' + (index + 1));
+
+                    const thumbImg = image.cloneNode(true);
+                    thumbImg.className = 'w-full h-full object-cover';
+                    thumbButton.appendChild(thumbImg);
+                    thumbsWrap.appendChild(thumbButton);
+                });
+
+                gallery.appendChild(mainWrap);
+                gallery.appendChild(thumbsWrap);
+                plainGrid.replaceWith(gallery);
+            });
+
+            document.querySelectorAll('[data-gallery]').forEach(function (gallery) {
+                const mainImage = gallery.querySelector('.gallery-main');
+                const thumbs = gallery.querySelectorAll('.gallery-thumb');
+                const zoomButton = gallery.querySelector('.gallery-zoom');
+
+                if (!mainImage || !thumbs.length) return;
+
+                thumbs.forEach(function (thumb) {
+                    thumb.addEventListener('click', function () {
+                        const src = this.dataset.src;
+                        const alt = this.dataset.alt || 'Vista del producto';
+
+                        mainImage.src = src;
+                        mainImage.alt = alt;
+                        mainImage.dataset.zoom = src;
+
+                        thumbs.forEach(function (item) {
+                            item.classList.toggle('active', item === thumb);
+                        });
+                    });
+                });
+
+                if (zoomButton) {
+                    zoomButton.addEventListener('click', function () {
+                        const modal = document.getElementById('gallery-modal');
+                        const modalImage = document.getElementById('gallery-modal-image');
+                        if (!modal || !modalImage) return;
+
+                        modalImage.src = mainImage.dataset.zoom || mainImage.src;
+                        modal.classList.add('is-open');
+                    });
+                }
+
+                mainImage.addEventListener('click', function () {
+                    const modal = document.getElementById('gallery-modal');
+                    const modalImage = document.getElementById('gallery-modal-image');
+                    if (!modal || !modalImage) return;
+
+                    modalImage.src = mainImage.dataset.zoom || mainImage.src;
+                    modal.classList.add('is-open');
+                });
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            inicializarGalerias();
+
+            const modal = document.getElementById('gallery-modal');
+            if (modal) {
+                const closeButton = document.getElementById('gallery-modal-close');
+
+                closeButton.addEventListener('click', function () {
+                    modal.classList.remove('is-open');
+                });
+
+                modal.addEventListener('click', function (event) {
+                    if (event.target === modal) {
+                        modal.classList.remove('is-open');
+                    }
+                });
+
+                document.addEventListener('keydown', function (event) {
+                    if (event.key === 'Escape') {
+                        modal.classList.remove('is-open');
+                    }
+                });
+            }
+
+            document.querySelectorAll('[data-product]').forEach(function (enlace) {
+                enlace.addEventListener('click', function (event) {
+                    const producto = this.dataset.product;
+                    const selector = document.getElementById('equipo');
+                    const modelo = document.getElementById('modelo');
+
+                    if (selector && producto) {
+                        selector.value = producto;
+                        selector.classList.remove('border-red-500', 'ring-4', 'ring-red-100');
+                        actualizarResumenProducto(producto);
+                    }
+
+                    if (modelo && !modelo.value.trim()) {
+                        modelo.value = producto;
+                        modelo.classList.remove('border-red-500', 'ring-4', 'ring-red-100');
+                    }
+
+                    const seccion = document.getElementById('contacto');
+                    if (seccion) {
+                        seccion.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+        });
+
+        function enviarFormulario(event) {
+            event.preventDefault();
+
+            const nombre = document.getElementById('nombre');
+            const telefono = document.getElementById('telefono');
+            const email = document.getElementById('email');
+            const equipo = document.getElementById('equipo');
+            const cantidad = document.getElementById('cantidad');
+            const modelo = document.getElementById('modelo');
+
+            let valido = true;
+
+            if (!nombre.value.trim()) {
+                marcarError(nombre);
+                valido = false;
+            }
+            if (!telefono.value.trim()) {
+                marcarError(telefono);
+                valido = false;
+            }
+            if (email.value.trim() && !email.value.includes('@')) {
+                marcarError(email);
+                valido = false;
+            }
+            if (!equipo.value) {
+                marcarError(equipo);
+                valido = false;
+            }
+            if (!cantidad.value) {
+                marcarError(cantidad);
+                valido = false;
+            }
+            if (!modelo.value.trim()) {
+                marcarError(modelo);
+                valido = false;
+            }
+
+            if (valido) {
+                fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(new FormData(event.target))
+                })
+                .then(() => {
+                    alert('¡Gracias! Recibimos tu solicitud de compra y te responderemos pronto.');
+                    event.target.reset();
+                })
+                .catch(() => {
+                    alert('Error al enviar. Intenta nuevamente o compra directamente por WhatsApp.');
+                });
+            }
+        }
+
+        function marcarError(elemento) {
+            elemento.classList.add('border-red-500', 'ring-4', 'ring-red-100');
+        }
+
+        function limpiarError(elemento) {
+            elemento.classList.remove('border-red-500', 'ring-4', 'ring-red-100');
+        }
+    </script>
+
+</body>
+</html>
